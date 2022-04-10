@@ -1,0 +1,26 @@
+{
+  "name": "challengeten_profilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickBarendse/ChallengeTen_ProfileGenerator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RickBarendse/ChallengeTen_ProfileGenerator/issues"
+  },
+  "homepage": "https://github.com/RickBarendse/ChallengeTen_ProfileGenerator#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.2"
+  }
+}
