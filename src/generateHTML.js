@@ -11,7 +11,7 @@ const createManager = function (manager) {
             <div class="card-body">
                 <p class="id">ID:  ${manager.id}</p>
                 <p class="email">Email:  <a: href="mailto:${manager.email}">${manager.email}</a></p>
-                <p class="office">Office Number:  ${manager.officeNumber}</p>
+                <p class="detail">Office Number:  ${manager.officeNumber}</p>
             </div>
         </div>
     </div>                
@@ -30,8 +30,8 @@ const createEngineer = function (engineer) {
 
             <div class="card-body">
                 <p class="id">ID:  ${engineer.id}</p>
-                <p class="email">Email:  <a: href="mailto:${engineer.email}">${engineer.email}</a></p>
-                <p class="github">GitHub Link: <a href="https://github.com/${engineer.username}" target="_blank">${engineer.username}</a></p>
+                <p class="email">Email:<a: href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="detail">GitHub Link: <a href="https://github.com/${engineer.username}" target="_blank">${engineer.username}</a></p>
             </div>
         </div>
     </div>                
@@ -45,13 +45,13 @@ const createIntern = function (intern) {
         <div class="card h-100">
             <div class="card-header">
                 <h3>${intern.name}</h3>
-                <h4>Engineer</h4>
+                <h4>Intern</h4>
             </div>
 
             <div class="card-body">
                 <p class="id">ID:  ${intern.id}</p>
                 <p class="email">Email:  <a: href="mailto:${intern.email}">${intern.email}</a></p>
-                <p class="school">School: ${intern.school}</p>
+                <p class="detail">School: ${intern.school}</p>
             </div>
         </div>
     </div>                
@@ -104,10 +104,10 @@ const createTeamPage = function(employeeCards) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Employee Profile</title>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-    </head>
+        </head>
 
     <body>
         <header>
