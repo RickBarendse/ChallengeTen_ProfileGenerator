@@ -5,7 +5,7 @@ const Manager = require('../lib/Manager')
 test('test office number', () => {
     const manager = new Manager('Rick', 30534, 'rick.barendse@Outlook.com', 'suite90'); 
 
-    expect(manager.officeNumber).toEqual("suite90");
+    expect(manager.getOfficeNumber()).toEqual("suite90");
 });
 
 // gets manager role from getRole()

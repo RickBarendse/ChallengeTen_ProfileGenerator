@@ -5,7 +5,7 @@ const Engineer = require('../lib/Engineer')
 test('test username', () => {
     const engineer = new Engineer('Rick', 30534, 'rick.barendse@Outlook.com', 'rickbarendse'); 
 
-    expect(engineer.username).toEqual("rickbarendse");
+    expect(engineer.getUsername()).toEqual("rickbarendse");
 });
 
 // gets engineer role from getRole()

@@ -5,7 +5,7 @@ const Intern = require('../lib/Intern')
 test('test school', () => {
     const intern = new Intern('Rick', 30534, 'rick.barendse@Outlook.com', 'UCLA'); 
 
-    expect(intern.school).toEqual("UCLA");
+    expect(intern.getSchool()).toEqual("UCLA");
 });
 
 // gets intern role from getRole()
