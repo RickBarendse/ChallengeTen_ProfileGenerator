@@ -26,7 +26,7 @@
   Pull requests are welcome.
     
   ## Tests
-  The application uses jest for testing.  To run the tests, enter 'npm test' in the command lineof the integrated terminal.
+  The application uses jest for testing.  To run the tests, enter 'npm test' in the command line of the integrated terminal.
     
   ## Questions
   Please visit my GitHub Overview page at: https://github.com/RickBarendse
