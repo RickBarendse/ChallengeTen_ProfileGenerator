@@ -8,9 +8,9 @@ const createManager = function (manager) {
                 <h4>Manager</h4>
             </div>
 
-            <div class="card-body".
+            <div class="card-body">
                 <p class="id">ID:  ${manager.id}</p>
-                <p class="email">Email:  <a: href="mailto:${manager.email}</a></p>
+                <p class="email">Email:  <a: href="mailto:${manager.email}">${manager.email}</a></p>
                 <p class="office">Office Number:  ${manager.officeNumber}</p>
             </div>
         </div>
@@ -28,10 +28,10 @@ const createEngineer = function (engineer) {
                 <h4>Engineer</h4>
             </div>
 
-            <div class="card-body".
+            <div class="card-body">
                 <p class="id">ID:  ${engineer.id}</p>
-                <p class="email">Email:  <a: href="mailto:${engineer.email}</a></p>
-                <p class="github">GitHub Link: <a href="https://github.com/${engineer.github}></p>
+                <p class="email">Email:  <a: href="mailto:${engineer.email}">${engineer.email}</a></p>
+                <p class="github">GitHub Link: <a href="https://github.com/${engineer.username}" target="_blank">${engineer.username}</a></p>
             </div>
         </div>
     </div>                
@@ -48,10 +48,10 @@ const createIntern = function (intern) {
                 <h4>Engineer</h4>
             </div>
 
-            <div class="card-body".
+            <div class="card-body">
                 <p class="id">ID:  ${intern.id}</p>
-                <p class="email">Email:  <a: href="mailto:${intern.email}</a></p>
-                <p class="school">School: ${intern.school}></p>
+                <p class="email">Email:  <a: href="mailto:${intern.email}">${intern.email}</a></p>
+                <p class="school">School: ${intern.school}</p>
             </div>
         </div>
     </div>                
@@ -116,15 +116,20 @@ const createTeamPage = function(employeeCards) {
             </div>
         </header>
 
-        <main>
-        </main>
+            <main>
+                <div class="container">
+                    <div class="row-justify-content-cneter" id="team-cards">
+                        ${employeeCards}
+                    </div>
+                </div>
+            </main>
 
         <footer>
         </footer>
     </body>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </html>
   `;
  };    

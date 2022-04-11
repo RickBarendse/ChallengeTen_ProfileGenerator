@@ -7,7 +7,8 @@ const generatePage = require('./src/generateHTML');
 
 // required constructors for each employee type
 const Manager = require('./lib/Manager');
-
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const teamArray = [];
 
@@ -71,7 +72,6 @@ const promptManager = () => {
         },
     ])
 
-
     .then(managerData => {
         const { name, id, email, officeNumber } = managerData;
         const manager = new Manager (name, id, email, officeNumber);
@@ -82,28 +82,10 @@ const promptManager = () => {
 const addEmployee = employeeData => {
     return inquirer.prompt([
         {
-        type: 'confirm',
-        name: 'confirmTeam',
-        message: 'Would you like to add team members?',
-        default: true
-        },
-
-        {
             type: 'list',
             name: 'role',
             message: "What is the employee's role? (required",
             choices: ['Engineer', 'Intern'],
-            when: ({ confirmTeam }) => {
-                if (confirmTeam) {
-                    return true 
-                .then (console.log)
-                `
-                ========================
-                Add a employee to roster
-                ========================
-                `} else {
-                return false;}
-            }
         },
 
         {
@@ -150,20 +132,61 @@ const addEmployee = employeeData => {
 
         {
             type: 'input',
-            name: 'github',
+            name: 'username',
             message: "Please enter the employee's GitHub username. (required)",
             when: (input) => input.role === "Engineer",
-            validate: githubInput => {
-                if (githubInput) {
+            validate: usernameInput => {
+                if (usernameInput) {
                     return true;
                 } else {
                     console.log("Make sure you include employee's GitHub username!")
                     return false;
                 }
             }
+        },
+
+        {
+            type: 'input',
+            name: 'school',
+            message: "Please enter the intern's school. (required)",
+            when: (input) => input.role === "Intern",
+            validate: schoolInput => {
+                if (schoolInput) {
+                    return true;
+                } else {
+                    console.log("Make sure you include the intern's school!")
+                    return false;
+                }
+            }
+        },
+
+        {
+            type: 'confirm',
+            name: 'confirmAddEmployee',
+            message: 'Would you like to add more team members?',
+            default: false
         }
     ])
-}
+    .then(employeeData => {
+
+        let { name, id, email, role, username, school, confirmAddEmployee } = employeeData;
+        let employee;
+
+        if (role === "Engineer") {
+            employee = new Engineer (name, id, email, username);
+        } else if (role === "Intern") {
+            employee = new Intern (name, id, email, school);
+        }
+
+        teamArray.push(employee);
+
+        if (confirmAddEmployee) {
+            return addEmployee(teamArray);
+        } else {
+            return teamArray;
+        }
+    })
+};
 
 
 // function to generate HTML page using the file system
